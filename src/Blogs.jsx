@@ -10,7 +10,7 @@ const Blogs = () => {
   let { data } = useFetch("https://suhayadb-a550.restdb.io/rest/blogs", {
     method: "GET",
     headers: {
-      "x-apikey": "692585561c64b961dcdde471",
+      "x-apikey": "",
       "Content-type": "application/json",
     },
   });
