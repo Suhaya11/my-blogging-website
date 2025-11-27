@@ -30,7 +30,7 @@ const NewBlog = (props) => {
       method: "POST",
       Headers: {
         "Content-type": "application/json",
-        "x-apikey": "692585561c64b961dcdde471",
+        "x-apikey": "",
       },
       body: JSON.stringify(blog),
     });
