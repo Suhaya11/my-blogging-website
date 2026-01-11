@@ -2,20 +2,22 @@
 
 import useFetch from "./useFetch";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { NavLinks } from "./navLinks";
+
 import ReactionsOnBlog from "./ReactionsOnBlog";
-import BlogDetails from "./BlogDetails";
+
 
 const Blogs = () => {
-  let { data } = useFetch("https://suhayadb-a550.restdb.io/rest/blogs", {
+  let { data } = useFetch("https://jsonplaceholder.typicode.com/posts", {
     method: "GET",
     headers: {
-      "x-apikey": "692585561c64b961dcdde471",
+      
       "Content-type": "application/json",
     },
   });
   console.log(data);
   console.log(localStorage);
+  const existed = localStorage.getItem("myBlogs");
+  if (existed) data?.push(...[JSON.parse(existed)]);
   return (
     <div className="blogsPage">
       <p
@@ -57,7 +59,7 @@ const Blogs = () => {
 
                 <ReactionsOnBlog />
                 <h4 className="blogAuthor">
-                  {blog.author != undefined ? "- " + blog.author : "Annonimous"}
+                  {blog.author != undefined ? "- " + blog.author : "json placeholder"}
                 </h4>
               </div>
             );

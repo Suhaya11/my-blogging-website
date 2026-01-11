@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import useFetch from "./useFetch";
+
 
 const Loging = ({ LoggingFunc }) => {
   let [userName, setUserName] = useState("");
   let [userPassword, setUserPassword] = useState("");
 
   let [userExist, setUserExist] = useState(true);
-  let { data } = useFetch("http://localhost:3000/users");
-
+  // let { data } = useFetch("http://localhost:3000/users");
+  const existed = localStorage.getItem("user");
+  const [data ,setData] = useState([]);
+  if (existed) {
+    console.log("user existed");
+    setData(JSON.parse(existed));
+  }
   let history = useHistory();
   function logingUser() {
     data?.map((person) => {

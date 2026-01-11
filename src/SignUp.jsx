@@ -10,7 +10,7 @@ const SignUp = (props) => {
   let [password, setPassword] = useState("");
 
   let [isAggre, setIsAggree] = useState(false);
-  let dbLink = "https://suhayadb-a550.restdb.io/rest/myusers  ";
+  let dbLink = "https://jsonplaceholder.typicode.com/users";
   let { data } = useFetch(dbLink);
   let [userExisted, setUserExisted] = useState(
     data?.some((user) => user.username === username)
@@ -37,7 +37,7 @@ const SignUp = (props) => {
       localStorage.setItem("user", user);
       console.log(user);
       setUserExisted(false);
-
+localStorage.setItem("user", JSON.stringify(user));
       addUser();
       history.push("/");
     }

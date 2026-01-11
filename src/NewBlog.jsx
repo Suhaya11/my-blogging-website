@@ -12,7 +12,7 @@ const NewBlog = (props) => {
   let author = useState(props.currentUser?.fullname);
   let [privateKey, setPrivateKey] = useState(null);
   let [time, setTime] = useState(Date());
-  let blogUrl = useState("https://suhayadb-a550.restdb.io/rest/blogs");
+  let blogUrl = useState("https://jsonplaceholder.typicode.com/posts");
   let [verifyBlogInput, setVerifyBlogInput] = useState(true);
 
   const blog = {
@@ -30,7 +30,7 @@ const NewBlog = (props) => {
       method: "POST",
       Headers: {
         "Content-type": "application/json",
-        "x-apikey": "692585561c64b961dcdde471",
+       
       },
       body: JSON.stringify(blog),
     });
@@ -43,7 +43,7 @@ const NewBlog = (props) => {
       console.log(`${props.currentUser.fullname}'s blog were added`);
       console.log(author);
       addNewBlog(blogUrl);
-
+// localStorage.setItem('myBlogs', JSON.stringify(blog));
       history.push("/blogs");
     } else {
       setVerifyBlogInput(false);
