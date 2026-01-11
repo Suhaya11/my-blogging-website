@@ -10,7 +10,11 @@ const Blogs = () => {
   let { data } = useFetch("https://jsonplaceholder.typicode.com/posts", {
     method: "GET",
     headers: {
+<<<<<<< HEAD
       
+=======
+      "x-apikey": "",
+>>>>>>> 23cef3199c0d30ccd4c0e5dcd45a674eb5ff01d5
       "Content-type": "application/json",
     },
   });

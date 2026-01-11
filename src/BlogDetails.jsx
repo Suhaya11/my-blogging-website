@@ -7,12 +7,20 @@ import ReactionsOnBlog from "./ReactionsOnBlog";
 const BlogDetails = () => {
   let { id } = useParams();
 
+<<<<<<< HEAD
   let blogUrl = `https://jsonplaceholder.typicode.com/posts/${id}`;
+=======
+  let blogUrl = `https://suha andyadb-a550.restdb.io/rest/blogs/${id}`;
+>>>>>>> 23cef3199c0d30ccd4c0e5dcd45a674eb5ff01d5
 
   let { data: blog } = useFetch(blogUrl, {
     method: "GET",
     Headers: {
+<<<<<<< HEAD
      
+=======
+      "x-apikey": "",
+>>>>>>> 23cef3199c0d30ccd4c0e5dcd45a674eb5ff01d5
       "Content-type": "application/json",
     },
   });
